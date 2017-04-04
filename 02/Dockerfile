@@ -13,5 +13,8 @@ RUN apt-get update \
 
 EXPOSE 80
 
-ENTRYPOINT ["apachectl", "-DFOREGROUND"]
+ENV WEBAPP_URL=https://github.com/acelaya/docker-course/blob/master/02/webapp.zip?raw=true
+COPY bootstrap.sh /usr/local/bin/bootstrap.sh
+
+ENTRYPOINT ["/usr/local/bin/bootstrap.sh"]
 
