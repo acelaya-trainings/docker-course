@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+    wordpress:
+        image: wordpress
+        ports:
+            - 80
+        environment:
+            WORDPRESS_DB_PASWWORD: example
+        volumes:
+            - ./wordpress:/var/www/html
+
+    mysql:
+        image: mariadb
+        environment:
+            MYSQL_ROOT_PASSWORD: example
+        volumes:
+            - ./mysql:/var/mysql
+
